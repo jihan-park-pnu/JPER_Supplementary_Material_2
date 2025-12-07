@@ -11,7 +11,7 @@ from FlagEmbedding import FlagReranker
 from PyPDF2 import PdfReader, PdfWriter
 
 # 01.1. Path
-BASE = Path(r"C:\your\base\path")
+BASE = Path(r"C:\path\to\your\project")
 PDF_DIR = BASE / "CCAP_Action_Plan"  # Folder for original planning documents (PDF)
 OUT_DIR = BASE / "Output"            # Folder for saving results
 CHROMA_DIR = BASE / "ChromaDB"       # Folder for Chroma used for RAG pipeline
@@ -104,7 +104,7 @@ def parse_large_pdf_with_upstage(pdf_path: Path, max_pages: int = 90) -> str:  #
         try:
             html_chunk = parse_with_upstage(part_path)
             merged_html += f"\n<!-- PART {i} START -->\n" + html_chunk + f"\n<!-- PART {i} END -->\n"
-        except Exception 
+        except Exception:  
             continue
 
     merged_path = OUT_DIR / f"{pdf_path.stem}_merged.html"
@@ -156,10 +156,10 @@ def extract_section_by_fixed_keywords(pdf_path: Path, min_page_threshold: int = 
 
 # 03.3. Pipeline execution
 files = list_pdfs()
-target_pdf = pick_pdf_by_fragment("순천시")  # 000000000000000
-section_parts = extract_section_by_fixed_keywords(target_pdf, min_page_threshold=150, max_section_pages=90)  # ‘부문별 세부시행계획’ 섹션만 추출 (자동 90p 단위 분할)
+target_pdf = pick_pdf_by_fragment("순천시")  # Select the plan, matching its name.
+section_parts = extract_section_by_fixed_keywords(target_pdf, min_page_threshold=150, max_section_pages=90)  # 'min_page_threshold=150': start keyword search begins after page 150 / 'max_section_pages=90': split extracted section into chunks of up to 90 pages
 
-merged_html = ""  # 각 부분을 순차적으로 Passer로 파싱 및 병합
+merged_html = ""  
 for i, section_pdf in enumerate(section_parts, start=1):
     html_chunk = parse_with_upstage(section_pdf)
     merged_html += f"\n<!-- SECTION {i} START -->\n" + html_chunk + f"\n<!-- SECTION {i} END -->\n"
@@ -167,15 +167,13 @@ for i, section_pdf in enumerate(section_parts, start=1):
 merged_path = OUT_DIR / f"{target_pdf.stem}_section_merged.html"
 merged_path.write_text(merged_html, encoding="utf-8")
 
-# ==========================================================
-# 4. LLM 기반 문서 분석 (정보 추출 단계)
-# ==========================================================
+# 04. Information Extraction Stage
+# ---------------------------------------------------------
 def ask_llm_on_document(html_path: Path, model: str = LLM_MODEL) -> str:
     client = OpenAI(api_key=OPENAI_API_KEY)
     document_text = html_path.read_text(encoding="utf-8")
-    print(f"문서 길이: {len(document_text):,} chars → 단일 분석 시작")
 
-    # Prompt
+    # 04.1. Prompt
     user_prompt = f"""
         # Extract the text exactly as written in the document. Do not paraphrase, rewrite, or modify wording.
         # Do not infer, assume, or supplement any information that is not explicitly stated in the document.
@@ -215,37 +213,32 @@ def ask_llm_on_document(html_path: Path, model: str = LLM_MODEL) -> str:
     out_path = OUT_DIR / f"LLM_Extract_{clean_stem}.txt"
     out_path.write_text(final_text, encoding="utf-8")    
 
-    print(f"[분석 완료] {out_path.name}")
     return final_text
 
 html_path = OUT_DIR / f"{target_pdf.stem}_section_merged.html"
 ask_llm_on_document(html_path)
 
-# ==========================================================
-# 5. Inference stage: Objective-action pair inference
-# ==========================================================
+# 05. Inference stage: Objective-action pair inference
+# ---------------------------------------------------------
 def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_k: int = 5):
     client = OpenAI(api_key=OPENAI_API_KEY)
     extracted_text = extracted_txt_path.read_text(encoding="utf-8")
 
-    print(f"추론 대상 텍스트 불러옴: {extracted_txt_path.name}")
-
-    # === 1. Objective 블록 분리 ===
+    # 05.1. Seperate objective and action sections
     sections = re.split(r"(?=^# Objective:)", extracted_text, flags=re.MULTILINE)
     sections = [s.strip() for s in sections if s.strip()]
-    print(f"총 {len(sections)}개 Objective 블록 탐지")
 
     total_results = []
 
     for sidx, sec in enumerate(sections, start=1):
 
-        # --- Objective 추출 ---
+        # 05.1.1. Objective
         obj_match = re.search(r"^# Objective:\s*(.+)", sec, flags=re.MULTILINE)
         if not obj_match:
             continue
         objective = obj_match.group(1).strip()
 
-        # --- Action + Risk 추출 ---
+        # 05.1.2. Action and maladaptation
         pairs = re.findall(
             r"## Action:\s*(.+?)\s*## Maladaptation risks:\s*(.+?)(?=^## Action:|$)",
             sec,
@@ -253,10 +246,9 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
         )
 
         if not pairs:
-            print(f"[경고] Action–Risk 쌍 없음 → {objective} 건너뜀")
             continue
 
-        # Missing인 action만 모으기
+        # 05.1.3. Collect only missing actions
         missing_actions = []
         for action, risk in pairs:
             action = action.strip()
@@ -267,24 +259,21 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
         if not missing_actions:
             continue
 
-        # === 2. Action별 inference ===
+        # 05.2. Inference for each missing action
         for aidx, action in enumerate(missing_actions, start=1):
 
-            print(f"\n Objective 추론 시작 ({sidx}/{len(sections)}) — {objective}")
-            print(f"   Action {aidx}/{len(missing_actions)}: {action}")
-
-            # --- Query 생성 (Objective–Measure pair) ---
+            # 05.2.1. Query for retrieval (Objective–Measure pair) 
             query = f"Maladaptation from implementing '{objective}' via measure '{action}'."
 
-            # --- Retrieval ---
+            # 05.2.2. Retrieval
             docs = db.similarity_search(query, k=top_k)
 
-            # --- Rerank ---
+            # 05.2.3. Re-ranking
             scores = [reranker.compute_score([query, d.page_content]) for d in docs]
             reranked_docs = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
             top_docs = [doc for _, doc in reranked_docs[:3]]
 
-            # --- Evidence 구성 ---
+            # 05.2.4. Build evidence text
             if top_docs:
                 context_chunks = []
                 for i, d in enumerate(top_docs):
@@ -296,8 +285,8 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
                 context_text = "\n\n".join(context_chunks)
             else:
                 context_text = "(No evidence)"
-            
-            # --- LLM 프롬프트 ---
+
+            # 05.2.5. Prompt
             prompt = f"""
                      # Your task is to infer maladaptation that may arise when achieving the given {objective} through its {action}.
 
@@ -327,7 +316,7 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
                      [Paragraph OR (No evidence-based maladaptation found)]
                      """
 
-            # --- LLM 호출 ---
+            # 05.2.6. Invoke LLM
             resp = client.responses.create(
                 model=model,
                 input=[{"role": "user", "content": prompt}],
@@ -336,9 +325,8 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
             inference = resp.output_text.strip() if hasattr(resp, "output_text") else "(Inference failed)"
             total_results.append(inference + "\n")
 
-    # === 3. 결과 저장 ===
+    # 05.3. Save inference results
     if not total_results:
-        print("모든 항목에 Adverse Impacts가 존재합니다. 추론 불필요.")
         return None
 
     final_output = "\n\n".join(total_results)
@@ -347,9 +335,8 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
     out_path = OUT_DIR / f"LLM_Inferred_{clean_stem}.txt"
     out_path.write_text(final_output, encoding="utf-8")
 
-    print(f"\n추론 결과 저장 완료 → {out_path.name}")
     return final_output
 
+# 05.4. Run inference
 extracted_txt_path = OUT_DIR / f"LLM_Extract_{html_path.stem.replace('_section_merged','')}.txt"
 infer_missing_impacts(extracted_txt_path)
-

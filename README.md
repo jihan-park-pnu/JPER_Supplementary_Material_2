@@ -170,8 +170,6 @@ Output format:
 - The full results for the Geumjeong-gu, Busan case presented in Section 4.1 are shown below.
 - This serves as a sample illustrating that the same output structure is consistently produced across other local governments.
 - Extraction: 
-<details>
-<summary><strong>Click to view full prompt</strong></summary>
 
 ```text
 # Objective: 기후변화로부터 구민 건강 보호
@@ -206,11 +204,8 @@ Output format:
 ## Action: 저탄소 생활 실천 활성화
 ## Maladaptation risks: (Missing)
 ```
-</details>
 
 - Inference: 
-<details>
-<summary><strong>Click to view full prompt</strong></summary>
 
 ```text
 # Inferred risk for: 기후변화로부터 구민 건강 보호 – 취약계층 중심 건강관리 강화
@@ -240,7 +235,6 @@ Implementing actions to secure safe, clean water (e.g., environmental flows, env
 # Inferred risk for: 기후변화 대응 역량 강화 – 저탄소 생활 실천 활성화
 Promoting low‑carbon lifestyle measures in a top‑down, non‑contextual way can be maladaptive by shifting or rebounding vulnerability onto low‑income or marginalized groups through higher opportunity and implementation costs, by creating path‑dependency and high opportunity costs from lock‑in to particular technologies or practices, and by producing negative externalities (e.g., environmental impacts or upstream GHG increases) that erode sustainable development when social contexts and multiple scales are ignored. (Evidence: Juhola et al., 2016; Zango‑Palau et al., 2024; Neset et al., 2019).
 ```
-</details>
 
 ## D. Operational workflow: End-user configuration 
 ### D.1. Section extraction parameters

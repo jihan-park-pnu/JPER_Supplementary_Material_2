@@ -3,11 +3,11 @@
 - This repository contains the Python code (RAG_pipeline.py) and the pre-built vector data stored in Chroma database (see ChromaDB) for analysis reproducibility. 
 - It also provides prompts, queries, output examples, and documentation on operational workflow.
 
-## 1. Technical setup and configuration 
+## A. Technical setup and configuration 
 
 - This section describes the system requirements, environment setup, directory structure, and model parameters required to reproduce the LLM–RAG pipeline used in this study.
 
-### 1.1. Required python libraries
+### A.1. Required python libraries
 
 - The pipeline uses the following key libraries: 
 
@@ -26,7 +26,7 @@
 pip install openai langchain-community chromadb FlagEmbedding PyPDF2 requests
 ```
 
-### 1.2. Directory structure
+### A.2. Directory structure
 
 - The following folders must exist befor running the pipeline:
 
@@ -48,7 +48,7 @@ CHROMA_DIR = BASE / "ChromaDB"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 ```
 
-### 1.3. API keys and model versions
+### A.3. API keys and model versions
 
 - Require `UPSTAGE_API_KEY` and `OPENAI_API_KEY` environment variable. 
 - Following APIs are required:
@@ -76,8 +76,8 @@ emb = HuggingFaceEmbeddings(model_name=EMB_MODEL)
 db = Chroma(persist_directory=str(CHROMA_DIR), embedding_function=emb)
 ```
 
-## 2. Prompt and query
-### 2.1. Information extraction 
+## B. Prompt and query
+### B.1. Information extraction 
 
 ```text
 # Extract the text exactly as written in the document. Do not paraphrase, rewrite, or modify wording.
@@ -107,13 +107,13 @@ Output Format (must follow this structure strictly):
 {document_text}
 === DOCUMENT END ===
 ```
-### 2.2. Retrieval query 
+### B.2. Retrieval query 
 
 ```text
 Maladaptation from implementing '{objective}' via measure '{action}'
 ```
 
-### 2.3. Inference 
+### B.3. Inference 
 
 ```text
 # Your task is to infer maladaptation that may arise when achieving the given {objective} through its {action}.
@@ -139,6 +139,29 @@ Contextual Evidence: {context_text}
 ## 3. If no evidence supports a maladaptation risk, output only: "(No evidence-based maladaptation found)"
 ## 4. Respond in English.
                         
+Output format:
+# Inferred risk for: {objective} – {action}
+[Paragraph OR (No evidence-based maladaptation found)]
+```
+
+## C. Output
+### C.1. Output format instruction in prompt
+
+- In this study, we instructed the model to output hierarchical structure as follows.
+
+- Information extraction:
+
+```text
+Output Format (must follow this structure strictly):
+# Objective: {objective}
+## Action: {action}
+## Maladaptation risks: ...
+(Repeat this block for all objectives)
+```
+
+- Inference:
+
+```text
 Output format:
 # Inferred risk for: {objective} – {action}
 [Paragraph OR (No evidence-based maladaptation found)]

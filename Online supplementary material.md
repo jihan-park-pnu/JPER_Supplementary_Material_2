@@ -1,4 +1,4 @@
-# Supplementary Material 2
+# Supplementary material 2
 
 - This repository contains the Python code (RAG_pipeline.py) and the pre-built vector data stored in Chroma database (see ChromaDB) for analysis reproducibility. 
 - It also provides prompts, queries, output examples, and documentation on operational workflow.
@@ -267,7 +267,7 @@ end_kw   = "계획의집행및관리"
 ```
 - Since local governments frequently employ different expressions for equivalent hierarchical concepts, {objective} and {action}, these labels were revised for each document to reflect its specific wording.
 
-# Supplementary Material 3
+# Supplementary material 3
 
 - The table below lists the ten documents randomly selected in each of the three independent runs conducted for the text extraction accuracy assessment described in Section 2.5.
 - 1st trial:

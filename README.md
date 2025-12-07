@@ -266,3 +266,18 @@ end_kw   = "계획의집행및관리"
 ## Only structural labels (e.g., 추진전략, 실천과제) determine classification; Do not classify objectives and actions based on semantic meaning, wording style, and phrasing.
 ```
 - Since local governments frequently employ different expressions for equivalent hierarchical concepts, {objective} and {action}, these labels were revised for each document to reflect its specific wording.
+
+# Supplementary Material 3
+
+| No. | Authors | Article Title | Source Title | DOI Link |
+|-----|---------|----------------|---------------|-----------|
+| 1 | Akamani, K | The Roles of Adaptive Water Governance in Enhancing the Transition towards Ecosystem-Based Adaptation | WATER | http://dx.doi.org/10.3390/w15132341 |
+| 2 | Althor, G; Mahood, S; Witt, B; Colvin, RM; Watson, JEM | Large-scale environmental degradation results in inequitable impacts to already impoverished communities: A case study from the floating villages of Cambodia | AMBIO | http://dx.doi.org/10.1007/s13280-018-1022-2 |
+| 3 | Alvarez, S; Larkin, SL; Ropicki, A | Optimizing provision of ecosystem services using modern portfolio theory | ECOSYSTEM SERVICES | http://dx.doi.org/10.1016/j.ecoser.2017.07.016 |
+| 4 | Bisaro, A | Coastal adaptation through urban land reclamation: Exploring the distributional effects | Journal of the Geographical Society of Berlin | http://dx.doi.org/10.12854/erde-2019-453 |
+| 5 | Ciplet, D; Roberts, JT; Khan, M | The Politics of International Climate Adaptation Funding: Justice and Divisions in the Greenhouse | GLOBAL ENVIRONMENTAL POLITICS | http://dx.doi.org/10.1162/GLEP_a_00153 |
+| 6 | Hurlimann, A; Barnett, J; Fincher, R; Osbaldiston, N; Mortreux, C; Graham, S | Urban planning and sustainable adaptation to sea-level rise | LANDSCAPE AND URBAN PLANNING | http://dx.doi.org/10.1016/j.landurbplan.2013.12.013 |
+| 7 | Jesdale, BM; Morello-Frosch, R; Cushing, L | The Racial/Ethnic Distribution of Heat Risk-Related Land Cover in Relation to Residential Segregation | ENVIRONMENTAL HEALTH PERSPECTIVES | http://dx.doi.org/10.1289/ehp.1205919 |
+| 8 | Rudge, K | Leveraging critical race theory to produce equitable climate change adaptation | NATURE CLIMATE CHANGE | http://dx.doi.org/10.1038/s41558-023-01690-9 |
+| 9 | Silao, ZH; Ocloo, XS; Chapman, M; Hunt, L; Stenger, K | Trends in agroforestry research over 4 decades | ELEMENTA-SCIENCE OF THE ANTHROPOCENE | http://dx.doi.org/10.1525/elementa.2022.00151 |
+| 10 | Ziaja, S | How Algorithm-Assisted Decision Making Is Influencing Environmental Law and Climate Adaptation | ECOLOGY LAW QUARTERLY | http://dx.doi.org/10.15779/Z38086363B |

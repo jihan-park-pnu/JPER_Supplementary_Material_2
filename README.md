@@ -40,7 +40,7 @@ BASE/
 
 - In the script:
 
-```bash
+```python
 BASE = Path(r"C:\path\to\your\project")
 PDF_DIR = BASE / "CCAP_Action_Plan"
 OUT_DIR = BASE / "Output"

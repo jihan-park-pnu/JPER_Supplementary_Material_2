@@ -6,9 +6,6 @@
 ## 2. Prompt and query
 ### 2.1. Information extraction 
 
-<details>
-<summary><strong>Click to view full prompt</strong></summary>
-
 ```text
 # Extract the text exactly as written in the document. Do not paraphrase, rewrite, or modify wording.
 # Do not infer, assume, or supplement any information that is not explicitly stated in the document.
@@ -37,8 +34,6 @@ Output Format (must follow this structure strictly):
 {document_text}
 === DOCUMENT END ===
 ```
-</details> 
-
 ### 2.2. Retrieval query 
 
 ```text

@@ -3,10 +3,20 @@
 - This repository contains the Python code (RAG_pipeline.py) and the pre-built vector data stored in Chroma database (see ChromaDB) for analysis reproducibility. 
 - It also provides prompts, queries, output examples, and documentation on operational workflow.
 
-## 1. Prompt and query
-### 1.1. Information extraction 
+## 1. Technical setup and configuration 
 
+- This section describes the system requirements, environment setup, directory structure, and model parameters required to reproduce the LLM–RAG pipeline used in this study.
 
+### 1.1. Required python libraries
+
+- `openai` — LLM invocation (GPT-5-mini)
+- `requests` — Upstage Document Parse API call
+- `langchain_community.vectorstores.Chroma` — ChromaDB client
+- `langchain_community.embeddings.HuggingFaceEmbeddings` — bge-m3 embedding model
+- `FlagEmbedding` — bge-reranker-v2-m3 reranker
+- `PyPDF2` — PDF splitting and handling
+- `pathlib` — file management
+- `re` — regular expression parsing
 
 ## 2. Prompt and query
 ### 2.1. Information extraction 

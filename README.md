@@ -42,9 +42,6 @@ Maladaptation from implementing '{objective}' via measure '{action}'
 
 ### 2.3. Inference 
 
-<details>
-<summary><strong>Click to view full prompt</strong></summary>
-
 ```text
 # Your task is to infer maladaptation that may arise when achieving the given {objective} through its {action}.
 
@@ -73,4 +70,3 @@ Output format:
 # Inferred risk for: {objective} – {action}
 [Paragraph OR (No evidence-based maladaptation found)]
 ```
-</details> 

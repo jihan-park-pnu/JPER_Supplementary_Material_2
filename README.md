@@ -41,10 +41,7 @@ Output Format (must follow this structure strictly):
 
 ### 2.2. Retrieval query 
 
-<details>
-<summary><strong>Click to view full prompt</strong></summary>
-
 ```text
 Maladaptation from implementing '{objective}' via measure '{action}'
 ```
-</details> 
+

@@ -269,6 +269,8 @@ end_kw   = "계획의집행및관리"
 
 # Supplementary Material 3
 
+- The table below lists the ten documents randomly selected in each of the three independent runs conducted for the text extraction accuracy assessment described in Section 2.5.
+- 1st trial: 
 | No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Akamani, K | The Roles of Adaptive Water Governance in Enhancing the Transition towards Ecosystem-Based Adaptation | WATER | http://dx.doi.org/10.3390/w15132341 |
@@ -281,3 +283,29 @@ end_kw   = "계획의집행및관리"
 | 8 | Rudge, K | Leveraging critical race theory to produce equitable climate change adaptation | NATURE CLIMATE CHANGE | http://dx.doi.org/10.1038/s41558-023-01690-9 |
 | 9 | Silao, ZH; Ocloo, XS; Chapman, M; Hunt, L; Stenger, K | Trends in agroforestry research over 4 decades | ELEMENTA-SCIENCE OF THE ANTHROPOCENE | http://dx.doi.org/10.1525/elementa.2022.00151 |
 | 10 | Ziaja, S | How Algorithm-Assisted Decision Making Is Influencing Environmental Law and Climate Adaptation | ECOLOGY LAW QUARTERLY | http://dx.doi.org/10.15779/Z38086363B |
+- 2nd trial: 
+| No. | Authors | Article Title | Source Title | DOI Link |
+|-----|---------|----------------|---------------|-----------|
+| 1 | Anderson, MJ; Conrow, L; Hobbs, M; Paulik, R; Blackett, P; Logan, T | Distributional justice and climate risk assessment: An analysis of disparities within direct and indirect risk | RISK ANALYSIS | http://dx.doi.org/10.1111/risa.17664 |
+| 2 | Chakraborty, R; Rampini, C; Sherpa, PY | Mountains of inequality: encountering the politics of climate adaptation across the Himalaya | ECOLOGY AND SOCIETY | http://dx.doi.org/10.5751/ES-14399-280406 |
+| 3 | Eakin, H; Bojórquez-Tapia, LA; Miquelajauregui, Y; Grave, I; Aguilar, BH; Janssen, MA | Using exploratory modeling to challenge narratives of risk governance in Mexico City | PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA | http://dx.doi.org/10.1073/pnas.2313191121 |
+| 4 | Edwards, F; Dixon, J; Friel, S; Hall, G; Larsen, K; Lockie, S; Wood, B; Lawrence, M; Hanigan, I; Hogan, A; Hattersley, L | Climate Change Adaptation at the Intersection of Food and Health | ASIA-PACIFIC JOURNAL OF PUBLIC HEALTH | http://dx.doi.org/10.1177/1010539510392361 |
+| 5 | Fankhauser, S; Martin, N | The economics of the CDM levy: Revenue potential, tax incidence and distortionary effects | ENERGY POLICY | http://dx.doi.org/10.1016/j.enpol.2009.09.026 |
+| 6 | Leap, SR; Soled, DR; Sampath, V; Nadeau, KC | Effects of extreme weather on health in underserved communities | ANNALS OF ALLERGY ASTHMA & IMMUNOLOGY | http://dx.doi.org/10.1016/j.anai.2024.04.018 |
+| 7 | Lioubimtseva, E; Zylman, H; Carron, K; Poynter, K; Rashrash, BME | Equity and Inclusion in Climate Action and Adaptation Plans of Michigan Cities | SUSTAINABILITY | http://dx.doi.org/10.3390/su16177745 |
+| 8 | Schultz, KH | Financing climate adaptation with a credit mechanism: initial considerations | CLIMATE POLICY | http://dx.doi.org/10.1080/14693062.2011.605563 |
+| 9 | Singh, GG; Keefer, J; Ota, Y | An inequity assessment framework for planning coastal and marine conservation and development interventions | FRONTIERS IN MARINE SCIENCE | http://dx.doi.org/10.3389/fmars.2023.1256500 |
+| 10 | Smart, LS; Taillie, PJ; Poulter, B; Vukomanovic, J; Singh, KK; Swenson, JJ; Mitasova, H; Smith, JW; Meentemeyer, RK | Aboveground carbon loss associated with the spread of ghost forests as sea levels rise | ENVIRONMENTAL RESEARCH LETTERS | http://dx.doi.org/10.1088/1748-9326/aba136 |
+- 3rd trial: 
+| No. | Authors | Article Title | Source Title | DOI Link |
+|-----|---------|----------------|---------------|-----------|
+| 1 | Bossio, CF; Labbé, D; Ford, J | Urban dwellers' adaptive capacity as a socio-psychological process: Insights from Lima, Peru | CLIMATE RISK MANAGEMENT | http://dx.doi.org/10.1016/j.crm.2021.100352 |
+| 2 | Boyce, GA; Launius, S; Williams, J; Miller, T | Alter-geopolitics and the feminist challenge to the securitization of climate policy | GENDER PLACE AND CULTURE | http://dx.doi.org/10.1080/0966369X.2019.1620698 |
+| 3 | Cannon, C; Chu, E; Natekal, A; Waaland, G | Translating and embedding equity-thinking into climate adaptation: an analysis of US cities | REGIONAL ENVIRONMENTAL CHANGE | http://dx.doi.org/10.1007/s10113-023-02025-2 |
+| 4 | Costa, C Jr; Thornton, P; Wollenberg, E | Global hotspots of climate change adaptation and mitigation in agriculture | FRONTIERS IN SUSTAINABLE FOOD SYSTEMS | http://dx.doi.org/10.3389/fsufs.2023.1216205 |
+| 5 | Druta, O; Schilder, F; Lennartz, C | Home improvements in later life: competing policy goals and the practices of older Dutch homeowners | INTERNATIONAL JOURNAL OF HOUSING POLICY | http://dx.doi.org/10.1080/19491247.2021.2007566 |
+| 6 | Fiack, D; Cumberbatch, J; Sutherland, M; Zerphey, N | Sustainable adaptation: Social equity and local climate adaptation planning in US cities | CITIES | http://dx.doi.org/10.1016/j.ccities.2021.103235 |
+| 7 | Kafle, K; Uprety, L; Shrestha, G; Pandey, V; Mukherji, A | Are climate finance subsidies equitably distributed among farmers? Assessing socio-demographics of solar irrigation in Nepal | ENERGY RESEARCH & SOCIAL SCIENCE | http://dx.doi.org/10.1016/j.erss.2022.102756 |
+| 8 | Lund, AJ; Lopez-Carr, D; Sokolow, SH; Rohr, JR; De Leo, GA | Agricultural Innovations to Reduce the Health Impacts of Dams | SUSTAINABILITY | http://dx.doi.org/10.3390/su13041869 |
+| 9 | Mutua, JY; Marshall, K; Paul, BK; Notenbaert, AMO | A methodology for mapping current and future heat stress risk in pigs | ANIMAL | http://dx.doi.org/10.1017/S1751731120000865 |
+| 10 | Rigolon, A; Tabassum, N; Ewing, R | Climate adaptation strategies for active transportation: Barriers and facilitators in US cities | SUSTAINABLE CITIES AND SOCIETY | http://dx.doi.org/10.1016/j.scs.2024.105956 |

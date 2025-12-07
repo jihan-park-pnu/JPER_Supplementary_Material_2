@@ -9,6 +9,8 @@
 
 ### 1.1. Required python libraries
 
+- The pipeline uses the following key libraries: 
+
 - `openai` — LLM invocation (GPT-5-mini)
 - `requests` — Upstage Document Parse API call
 - `langchain_community.vectorstores.Chroma` — ChromaDB client
@@ -17,6 +19,13 @@
 - `PyPDF2` — PDF splitting and handling
 - `pathlib` — file management
 - `re` — regular expression parsing
+
+Recommended installation:
+
+```bash
+pip install openai langchain-community chromadb FlagEmbedding PyPDF2 requests
+pip install sentence-transformers  # optional for downstream reproducibility tests
+```
 
 ## 2. Prompt and query
 ### 2.1. Information extraction 

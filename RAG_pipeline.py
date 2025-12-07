@@ -1,7 +1,5 @@
-# ==========================================================
-# 1. 기본 설정
-# ==========================================================
-
+# 01. Settings 
+# ---------------------------------------------------------
 import os
 import re
 from pathlib import Path
@@ -12,36 +10,28 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from FlagEmbedding import FlagReranker
 from PyPDF2 import PdfReader, PdfWriter
 
-# ====== 경로 설정 ======
-BASE = Path(r"C:\Users\RDPL-005\Desktop")
-PDF_DIR = BASE / "CCAP"              # 원본 PDF 폴더
-OUT_DIR = BASE / "Parsed_Preview"    # Passer 결과 저장 폴더
-CHROMA_DIR = BASE / "Chroma_Index"   # RAG용 Chroma 인덱스 폴더
+# 01.1. Path
+BASE = Path(r"C:\your\base\path")
+PDF_DIR = BASE / "CCAP_Action_Plan"  # Folder for original planning documents (PDF)
+OUT_DIR = BASE / "Output"            # Folder for saving results
+CHROMA_DIR = BASE / "ChromaDB"       # Folder for Chroma used for RAG pipeline
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# ====== API 키 ======
-UPSTAGE_API_KEY = os.getenv("UPSTAGE_API_KEY", "up_**********tslL") 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "sk-proj-_1**********A")
+# 01.2. API key
+UPSTAGE_API_KEY = os.getenv("UPSTAGE_API_KEY", "*****************") # Upstage API Key
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "*******************") # OpenAI API Key
 LLM_MODEL = "gpt-5-mini-2025-08-07"
 
-# ====== Embedding & DB 세팅 ======
+# 01.3. Embedding model and DB settings 
 EMB_MODEL = "BAAI/bge-m3"
 emb = HuggingFaceEmbeddings(model_name=EMB_MODEL)
 db = Chroma(persist_directory=str(CHROMA_DIR), embedding_function=emb)
 
-# ====== Reranker (업그레이드 버전) ======
+# 01.4. Re-ranker
 reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=False)
 
-print("[환경 설정 완료]")
-print(f"PDF 폴더: {PDF_DIR}")
-print(f"Chroma DB: {CHROMA_DIR}")
-print(f"모델: {LLM_MODEL}")
-print(f"임베딩: {EMB_MODEL}")
-print("리랭커: BAAI/bge-reranker-v2-m3")
-
-# ==========================================================
-# 2. Passer API 직접 호출 (Upstage 문서 파싱)
-# ==========================================================
+# 02. Passer API Call (Upstage Document Parse)
+# ---------------------------------------------------------
 def parse_with_upstage(pdf_path: Path) -> str:
     url = "https://api.upstage.ai/v1/document-digitization"
     headers = {"Authorization": f"Bearer {UPSTAGE_API_KEY}"}
@@ -49,65 +39,49 @@ def parse_with_upstage(pdf_path: Path) -> str:
     with open(pdf_path, "rb") as f:
         files = {"document": f}
         payload = {
-            "model": "document-parse",         
-            "ocr": "auto",
-            "output_formats": ["html"],
-            "merge_multipage_tables": True,
-            "chart_recognition": True
+            "model": "document-parse", "ocr": "auto", "output_formats": ["html"],
+            "merge_multipage_tables": True, "chart_recognition": True
         }
 
-        print(f"[UPSTAGE] {pdf_path.name} 업로드 중...")
         res = requests.post(url, headers=headers, files=files, data=payload)
 
     if res.status_code != 200:
         raise RuntimeError(
-            f"❌ Passer API 오류 ({res.status_code})\n"
-            f"응답: {res.text[:500]}..."
+            f"Passer API error ({res.status_code})\n"
+            f"Response: {res.text[:500]}..."
         )
 
     data = res.json()
     html = data.get("content", {}).get("html", "")
     if not html.strip():
-        raise ValueError("⚠️ 결과 HTML이 비어 있음")
+        raise ValueError("Parsed HTML is empty.")
 
     out_path = OUT_DIR / f"{pdf_path.stem}_parsed.html"
     out_path.write_text(html, encoding="utf-8")
-    print(f"✅ [Passer 파싱 완료] {out_path.name} ({len(html):,} chars)")
 
     return html
 
-# ==========================================================
-# 3. 대용량 PDF 자동 분할 + Passer 파싱 + HTML 병합
-# ==========================================================
-def list_pdfs(max_n: int = 10):
-    """📄 PDF 폴더 내 PDF 파일 목록 출력"""
+# 03. Large-PDF Splitting + Parsing + HTML Merging
+# ---------------------------------------------------------
+def list_pdfs(max_n: int = 10):  # Return list of PDF files in the PDF directory.
     pdf_files = sorted(PDF_DIR.glob("*.pdf"))
     if not pdf_files:
-        raise FileNotFoundError(f"⚠️ PDF 없음: {PDF_DIR}")
-
-    print(f"📄 {len(pdf_files)}개 PDF 발견:")
-    for i, p in enumerate(pdf_files[:max_n], start=1):
-        print(f"{i:>3}. {p.name}")
+        raise FileNotFoundError(f"No PDF files: {PDF_DIR}")
     return pdf_files
 
-def pick_pdf_by_fragment(fragment: str) -> Path:
-    """🎯 파일명 일부(fragment)로 특정 PDF 선택"""
+def pick_pdf_by_fragment(fragment: str) -> Path:  # Select a PDF file by matching part of its filename.
     frag = fragment.lower()
     matches = [p for p in PDF_DIR.glob("*.pdf") if frag in p.name.lower()]
     if not matches:
-        raise FileNotFoundError(f"'{fragment}'에 해당하는 PDF를 찾을 수 없습니다.")
-    matches.sort(key=lambda p: len(p.name))  # 가장 짧은 이름 우선
-    target = matches[0]
-    print(f"🎯 선택된 PDF: {target.name}")
-    return target
+        raise FileNotFoundError(f"No PDF matching fragment: '{fragment}'")
+    matches.sort(key=lambda p: len(p.name)) 
+    return matches[0]
 
-def split_pdf(input_path: Path, output_dir: Path, max_pages: int = 90):
+def split_pdf(input_path: Path, output_dir: Path, max_pages: int = 90):  # Split a PDF into multiple parts with max_pages per part.
     reader = PdfReader(str(input_path))
     total_pages = len(reader.pages)
     parts = (total_pages // max_pages) + (1 if total_pages % max_pages else 0)
     output_paths = []
-
-    print(f"📘 {input_path.name} ({total_pages} pages) → {parts}개로 분할 예정")
 
     for i in range(parts):
         writer = PdfWriter()
@@ -119,65 +93,56 @@ def split_pdf(input_path: Path, output_dir: Path, max_pages: int = 90):
         with open(out_path, "wb") as f:
             writer.write(f)
         output_paths.append(out_path)
-        print(f"✅ {out_path.name} 저장 ({end - start}p)")
 
     return output_paths
 
-def parse_large_pdf_with_upstage(pdf_path: Path, max_pages: int = 90) -> str:
+def parse_large_pdf_with_upstage(pdf_path: Path, max_pages: int = 90) -> str:  # Parsing each segment + merging (HTML). 
     split_paths = split_pdf(pdf_path, OUT_DIR, max_pages=max_pages)
     merged_html = ""
 
     for i, part_path in enumerate(split_paths, start=1):
-        print(f"\n🚀 [{i}/{len(split_paths)}] {part_path.name} 파싱 중...")
         try:
             html_chunk = parse_with_upstage(part_path)
             merged_html += f"\n<!-- PART {i} START -->\n" + html_chunk + f"\n<!-- PART {i} END -->\n"
-        except Exception as e:
-            print(f"⚠️ {part_path.name} 파싱 실패: {e}")
+        except Exception 
             continue
 
     merged_path = OUT_DIR / f"{pdf_path.stem}_merged.html"
     merged_path.write_text(merged_html, encoding="utf-8")
-
-    print(f"\n🎯 전체 병합 완료 → {merged_path.name} ({len(merged_html):,} chars)")
     return merged_html
 
-def extract_section_by_fixed_keywords(pdf_path: Path, min_page_threshold: int = 10, max_section_pages: int = 90) -> list[Path]:
+def extract_section_by_fixed_keywords(pdf_path: Path, min_page_threshold: int = 10, max_section_pages: int = 90) -> list[Path]:  # Extract a section of a PDF bounded by fixed Korean keywords, then split into chunks if the section exceeds max_section_pages.
     reader = PdfReader(pdf_path)
     start_page, end_page = None, None
 
-    start_kw = "부문별세부시행계획"
-    end_kw = "계획의집행및관리"
+    start_kw = "(E.g.)부문별세부시행계획"  # Starting keyword; enter the wording exactly as written in the document
+    end_kw = "(E.g.)계획의집행및관리"      # Ending keyword; enter the wording exactly as written in the document
 
-    print(f"🔍 '{pdf_path.name}'에서 '{start_kw}' ~ '{end_kw}' 구간 탐색 중...")
-
-    # ==== 1. 시작/끝 페이지 탐색 =====
+    # 03.1. Locate start and end pages
     for i, page in enumerate(reader.pages):
         text = page.extract_text() or ""
         text_clean = re.sub(r"\s+", "", text)
 
         if start_page is None and i > min_page_threshold and start_kw in text_clean:
             start_page = i
-            print(f"✅ 본문 시작 키워드 발견 (p.{i+1})")
         elif start_page is not None and end_kw in text_clean:
             end_page = i
-            print(f"✅ 종료 키워드 발견 (p.{i+1})")
             break
 
     if start_page is None:
-        raise ValueError(f"❌ '{start_kw}' 키워드를 {min_page_threshold+1}페이지 이후에서 찾을 수 없습니다.")
+        raise ValueError(f"Start keyword '{start_kw}' not found after page {min_page_threshold}.")
     if end_page is None:
         end_page = len(reader.pages)
 
     total_pages = end_page - start_page
-    print(f"📄 추출 구간: p.{start_page+1}–{end_page} ({total_pages} pages)")
 
-    # ==== 2. 90페이지 초과 시 자동 분할 =====
+    # 03.2. Split extracted section if required
     section_parts = []
     for idx in range(0, total_pages, max_section_pages):
         writer = PdfWriter()
         part_start = start_page + idx
         part_end = min(start_page + idx + max_section_pages, end_page)
+        
         for j in range(part_start, part_end):
             writer.add_page(reader.pages[j])
 
@@ -186,29 +151,21 @@ def extract_section_by_fixed_keywords(pdf_path: Path, min_page_threshold: int = 
             writer.write(f)
 
         section_parts.append(part_path)
-        print(f"✅ 섹션 부분 저장: {part_path.name} ({part_end - part_start}p)")
 
-    print(f"📘 '부문별 세부시행계획' 섹션 {len(section_parts)}개로 분할 완료")
     return section_parts
 
+# 03.3. Pipeline execution
 files = list_pdfs()
-target_pdf = pick_pdf_by_fragment("순천시")
+target_pdf = pick_pdf_by_fragment("순천시")  # 000000000000000
+section_parts = extract_section_by_fixed_keywords(target_pdf, min_page_threshold=150, max_section_pages=90)  # ‘부문별 세부시행계획’ 섹션만 추출 (자동 90p 단위 분할)
 
-# ‘부문별 세부시행계획’ 섹션만 추출 (자동 90p 단위 분할)
-section_parts = extract_section_by_fixed_keywords(target_pdf, min_page_threshold=150, max_section_pages=90)
-
-# 각 부분을 순차적으로 Passer로 파싱 및 병합
-merged_html = ""
+merged_html = ""  # 각 부분을 순차적으로 Passer로 파싱 및 병합
 for i, section_pdf in enumerate(section_parts, start=1):
-    print(f"\n🚀 [섹션 {i}/{len(section_parts)}] Passer 파싱 중...")
     html_chunk = parse_with_upstage(section_pdf)
     merged_html += f"\n<!-- SECTION {i} START -->\n" + html_chunk + f"\n<!-- SECTION {i} END -->\n"
 
 merged_path = OUT_DIR / f"{target_pdf.stem}_section_merged.html"
 merged_path.write_text(merged_html, encoding="utf-8")
-
-print(f"\n✅ 전체 섹션 병합 완료 → {merged_path.name}")
-print(f"📑 총 {len(section_parts)}개 섹션 병합 완료 ({len(merged_html):,} chars)")
 
 # ==========================================================
 # 4. LLM 기반 문서 분석 (정보 추출 단계)
@@ -395,3 +352,4 @@ def infer_missing_impacts(extracted_txt_path: Path, model: str = LLM_MODEL, top_
 
 extracted_txt_path = OUT_DIR / f"LLM_Extract_{html_path.stem.replace('_section_merged','')}.txt"
 infer_missing_impacts(extracted_txt_path)
+

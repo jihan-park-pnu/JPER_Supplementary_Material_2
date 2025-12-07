@@ -3,7 +3,7 @@
 This repository contains the code (RAG_pipeline.py) for analysis reproducibility and the pre-built vector data stored in Chroma (see ChromaDB). 
 It also provides documentation on how to use the code.
 
-## 2. Prompt 
+## 2. Prompt and query
 ### 2.1. Information extraction 
 
 <details>
@@ -36,5 +36,15 @@ Output Format (must follow this structure strictly):
 === DOCUMENT START ===
 {document_text}
 === DOCUMENT END ===
+```
+</details> 
+
+### 2.2. Retrieval query 
+
+<details>
+<summary><strong>Click to view full prompt</strong></summary>
+
+```text
+Maladaptation from implementing '{objective}' via measure '{action}'
 ```
 </details> 

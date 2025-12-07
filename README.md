@@ -1,7 +1,7 @@
 # Supplementary Material 2
 
-This repository contains the code (RAG_pipeline.py) for analysis reproducibility and the pre-built vector data stored in Chroma (see ChromaDB). 
-It also provides documentation on how to use the code.
+- This repository contains the Python code (RAG_pipeline.py) and the pre-built vector data stored in Chroma (see ChromaDB) for analysis reproducibility. 
+- It also provides prompts, queries, output examples, and documentation on operational workflow.
 
 ## 2. Prompt and query
 ### 2.1. Information extraction 

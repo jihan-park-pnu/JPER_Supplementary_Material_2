@@ -54,7 +54,6 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 - Following APIs are required:
   - Upstage Document Parse (document-parse-250618)
   - OpenAI GPT-5-mini (2025-08-07)
-
 - Re-ranker configuration:
 
 ```python
@@ -148,7 +147,6 @@ Output format:
 ### C.1. Output format instruction in prompt
 
 - In this study, we instructed the model (prompt) to produce a hierarchical output structure as follows.
-
 - Information extraction:
 
 ```text
@@ -171,7 +169,6 @@ Output format:
 
 - The full results for the Geumjeong-gu, Busan case presented in Section 4.1 are shown below.
 - This serves as a sample illustrating that the same output structure is consistently produced across other local governments.
-
 - Extraction: 
 <details>
 <summary><strong>Click to view full prompt</strong></summary>
@@ -210,3 +207,39 @@ Output format:
 ## Maladaptation risks: (Missing)
 ```
 </details>
+
+- Inference: 
+<details>
+<summary><strong>Click to view full prompt</strong></summary>
+
+```text
+# Inferred risk for: 시민 건강보호 – 전염병 관리대책 강화
+Strengthening infectious-disease control as a narrowly framed, technical response risks maladaptation by diverting limited funding, staff and political attention from broader climate–health integration and other public-health priorities, reinforcing path-dependent, technocratic interventions, undermining intersectoral governance and local capacity, and disproportionately burdening vulnerable groups—thereby increasing future vulnerability and eroding equitable, sustainable health outcomes [Evidence: Juhola, 2016; Findlater, 2021; Turner, 2024].
+
+# Inferred risk for: 시민 건강보호 – 전염병 관리대책 강화
+Strengthening infectious-disease control as a narrowly framed, technical response risks maladaptation by diverting limited funding, staff and political attention from broader climate–health integration and other public-health priorities, reinforcing path-dependent, technocratic interventions, undermining intersectoral governance and local capacity, and disproportionately burdening vulnerable groups—thereby increasing future vulnerability and eroding equitable, sustainable health outcomes [Evidence: Juhola, 2016; Findlater, 2021; Turner, 2024].
+
+# Inferred risk for: 시민 건강보호 – 전염병 관리대책 강화
+Strengthening infectious-disease control as a narrowly framed, technical response risks maladaptation by diverting limited funding, staff and political attention from broader climate–health integration and other public-health priorities, reinforcing path-dependent, technocratic interventions, undermining intersectoral governance and local capacity, and disproportionately burdening vulnerable groups—thereby increasing future vulnerability and eroding equitable, sustainable health outcomes [Evidence: Juhola, 2016; Findlater, 2021; Turner, 2024].
+```
+</details>
+
+## D. Operational workflow 
+### D.1. End-user configuration 
+### D.1.1. Section extraction parameters
+- Users must know beforehand which page the search should start from and which keywords appear in the document. 
+- The model begins scanning after the specified page and extracts the section once the keyword is detected, meaning that some prior knowledge is required.
+- Used for target-section retrieval:
+
+```python
+min_page_threshold = 150
+```
+
+- Korean keywords: 
+
+```python
+start_kw = "부문별세부시행계획"
+end_kw   = "계획의집행및관리"
+```
+
+- When the planning document changes, the keywords and the search starting point must be adjusted manually.

@@ -269,7 +269,7 @@ end_kw   = "계획의집행및관리"
 
 # Supplementary Material 3
 
-| No. | Authors | Article Title | Source Title | DOI Link |
+| No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Akamani, K | The Roles of Adaptive Water Governance in Enhancing the Transition towards Ecosystem-Based Adaptation | WATER | http://dx.doi.org/10.3390/w15132341 |
 | 2 | Althor, G; Mahood, S; Witt, B; Colvin, RM; Watson, JEM | Large-scale environmental degradation results in inequitable impacts to already impoverished communities: A case study from the floating villages of Cambodia | AMBIO | http://dx.doi.org/10.1007/s13280-018-1022-2 |

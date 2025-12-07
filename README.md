@@ -20,11 +20,32 @@
 - `pathlib` — file management
 - `re` — regular expression parsing
 
-Recommended installation:
+- Recommended installation:
 
 ```bash
 pip install openai langchain-community chromadb FlagEmbedding PyPDF2 requests
-pip install sentence-transformers  # optional for downstream reproducibility tests
+```
+
+### 1.2. Directory structure
+
+- The following folders must exist befor running the pipeline:
+
+```bash
+BASE/
+│── CCAP_Action_Plan/        # Original PDFs (local government plans)
+│── ChromaDB/                # Pre-built vector store persisted by Chroma
+│── Output/                  # LLM outputs: extracted text, HTML, inference results
+│── RAG_pipeline.py          # Main pipeline script
+```
+
+- In the script:
+
+```bash
+BASE = Path(r"C:\path\to\your\project")
+PDF_DIR = BASE / "CCAP_Action_Plan"
+OUT_DIR = BASE / "Output"
+CHROMA_DIR = BASE / "ChromaDB"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 ```
 
 ## 2. Prompt and query

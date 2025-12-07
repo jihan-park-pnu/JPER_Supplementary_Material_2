@@ -11,14 +11,14 @@
 
 - The pipeline uses the following key libraries: 
 
-- `openai` — LLM invocation (GPT-5-mini)
-- `requests` — Upstage Document Parse API call
-- `langchain_community.vectorstores.Chroma` — ChromaDB client
-- `langchain_community.embeddings.HuggingFaceEmbeddings` — bge-m3 embedding model
-- `FlagEmbedding` — bge-reranker-v2-m3 reranker
-- `PyPDF2` — PDF splitting and handling
-- `pathlib` — file management
-- `re` — regular expression parsing
+  - `openai` — LLM invocation (GPT-5-mini)
+  - `requests` — Upstage Document Parse API call
+  - `langchain_community.vectorstores.Chroma` — ChromaDB client
+  - `langchain_community.embeddings.HuggingFaceEmbeddings` — bge-m3 embedding model
+  - `FlagEmbedding` — bge-reranker-v2-m3 reranker
+  - `PyPDF2` — PDF splitting and handling
+  - `pathlib` — file management
+  - `re` — regular expression parsing
 
 - Recommended installation:
 

@@ -224,9 +224,8 @@ Strengthening infectious-disease control as a narrowly framed, technical respons
 ```
 </details>
 
-## D. Operational workflow 
-### D.1. End-user configuration 
-#### D.1.1. Section extraction parameters
+## D. Operational workflow: End-user configuration 
+### D.1. Section extraction parameters
 - Users must know beforehand which page the search should start from and which keywords appear in the document. 
 - The model begins scanning after the specified page and extracts the section once the keyword is detected, meaning that some prior knowledge is required.
 - Used for target-section retrieval:
@@ -243,3 +242,15 @@ end_kw   = "계획의집행및관리"
 ```
 
 - When the planning document changes, the keywords and the search starting point must be adjusted manually.
+
+### D.2. Section extraction parameters
+- The labels that correspond to {objective} and {action} must be specified for each document.
+- In this study, the prompt explicitly specified which keywords in the document should be interpreted as {objective} and {action}:
+
+```text
+# Objective/Action classification rules:
+## Only the sections in the document’s tables or main text that are explicitly marked as “추진전략” should be identified as {objective}.
+## Only the sections in the document’s tables or main text that are explicitly marked as “실천과제” should be identified as {action}.
+## Only structural labels (e.g., 추진전략, 실천과제) determine classification; Do not classify objectives and actions based on semantic meaning, wording style, and phrasing.
+```
+- Since local governments frequently employ different expressions for equivalent hierarchical concepts, i.e. {objective} and {action}, these labels were revised for each document to reflect its specific wording.

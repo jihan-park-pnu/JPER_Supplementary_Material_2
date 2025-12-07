@@ -226,7 +226,7 @@ Strengthening infectious-disease control as a narrowly framed, technical respons
 
 ## D. Operational workflow 
 ### D.1. End-user configuration 
-### D.1.1. Section extraction parameters
+#### D.1.1. Section extraction parameters
 - Users must know beforehand which page the search should start from and which keywords appear in the document. 
 - The model begins scanning after the specified page and extracts the section once the keyword is detected, meaning that some prior knowledge is required.
 - Used for target-section retrieval:

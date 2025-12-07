@@ -48,6 +48,34 @@ CHROMA_DIR = BASE / "ChromaDB"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 ```
 
+### 1.3. API keys and model versions
+
+- Require `UPSTAGE_API_KEY` and `OPENAI_API_KEY` environment variable. 
+- Following APIs are required:
+  - Upstage Document Parse (document-parse-250618)
+  - OpenAI GPT-5-mini (2025-08-07)
+
+- Re-ranker configuration:
+
+```python
+reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=False)
+```
+
+- Model names used:
+
+```python
+LLM_MODEL = "gpt-5-mini-2025-08-07"
+EMB_MODEL = "BAAI/bge-m3"
+RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
+```
+
+- Embedding initialization:
+
+```python
+emb = HuggingFaceEmbeddings(model_name=EMB_MODEL)
+db = Chroma(persist_directory=str(CHROMA_DIR), embedding_function=emb)
+```
+
 ## 2. Prompt and query
 ### 2.1. Information extraction 
 

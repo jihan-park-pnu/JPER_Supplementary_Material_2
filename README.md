@@ -270,7 +270,8 @@ end_kw   = "계획의집행및관리"
 # Supplementary Material 3
 
 - The table below lists the ten documents randomly selected in each of the three independent runs conducted for the text extraction accuracy assessment described in Section 2.5.
-- 1st trial: 
+- 1st trial:
+
 | No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Akamani, K | The Roles of Adaptive Water Governance in Enhancing the Transition towards Ecosystem-Based Adaptation | WATER | http://dx.doi.org/10.3390/w15132341 |
@@ -283,8 +284,10 @@ end_kw   = "계획의집행및관리"
 | 8 | Rudge, K | Leveraging critical race theory to produce equitable climate change adaptation | NATURE CLIMATE CHANGE | http://dx.doi.org/10.1038/s41558-023-01690-9 |
 | 9 | Silao, ZH; Ocloo, XS; Chapman, M; Hunt, L; Stenger, K | Trends in agroforestry research over 4 decades | ELEMENTA-SCIENCE OF THE ANTHROPOCENE | http://dx.doi.org/10.1525/elementa.2022.00151 |
 | 10 | Ziaja, S | How Algorithm-Assisted Decision Making Is Influencing Environmental Law and Climate Adaptation | ECOLOGY LAW QUARTERLY | http://dx.doi.org/10.15779/Z38086363B |
-- 2nd trial: 
-| No. | Authors | Article Title | Source Title | DOI Link |
+
+- 2nd trial:
+
+| No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Anderson, MJ; Conrow, L; Hobbs, M; Paulik, R; Blackett, P; Logan, T | Distributional justice and climate risk assessment: An analysis of disparities within direct and indirect risk | RISK ANALYSIS | http://dx.doi.org/10.1111/risa.17664 |
 | 2 | Chakraborty, R; Rampini, C; Sherpa, PY | Mountains of inequality: encountering the politics of climate adaptation across the Himalaya | ECOLOGY AND SOCIETY | http://dx.doi.org/10.5751/ES-14399-280406 |
@@ -296,8 +299,10 @@ end_kw   = "계획의집행및관리"
 | 8 | Schultz, KH | Financing climate adaptation with a credit mechanism: initial considerations | CLIMATE POLICY | http://dx.doi.org/10.1080/14693062.2011.605563 |
 | 9 | Singh, GG; Keefer, J; Ota, Y | An inequity assessment framework for planning coastal and marine conservation and development interventions | FRONTIERS IN MARINE SCIENCE | http://dx.doi.org/10.3389/fmars.2023.1256500 |
 | 10 | Smart, LS; Taillie, PJ; Poulter, B; Vukomanovic, J; Singh, KK; Swenson, JJ; Mitasova, H; Smith, JW; Meentemeyer, RK | Aboveground carbon loss associated with the spread of ghost forests as sea levels rise | ENVIRONMENTAL RESEARCH LETTERS | http://dx.doi.org/10.1088/1748-9326/aba136 |
-- 3rd trial: 
-| No. | Authors | Article Title | Source Title | DOI Link |
+
+- 3rd trial:
+
+| No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Bossio, CF; Labbé, D; Ford, J | Urban dwellers' adaptive capacity as a socio-psychological process: Insights from Lima, Peru | CLIMATE RISK MANAGEMENT | http://dx.doi.org/10.1016/j.crm.2021.100352 |
 | 2 | Boyce, GA; Launius, S; Williams, J; Miller, T | Alter-geopolitics and the feminist challenge to the securitization of climate policy | GENDER PLACE AND CULTURE | http://dx.doi.org/10.1080/0966369X.2019.1620698 |

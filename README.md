@@ -45,3 +45,37 @@ Output Format (must follow this structure strictly):
 Maladaptation from implementing '{objective}' via measure '{action}'
 ```
 
+### 2.3. Inference 
+
+<details>
+<summary><strong>Click to view full prompt</strong></summary>
+
+```text
+# Your task is to infer maladaptation that may arise when achieving the given {objective} through its {action}.
+
+# Maladaptation definition: 
+## Maladaptation arises from unintended trade-offs created by implementing an action to achieve its objective—such as harms imposed on other policy goals, social groups, or spatial areas.
+## Do not classify background problems, general negative conditions, or implementation challenges (e.g., costs, burdens, resource shortages) as maladaptation.
+                 
+# Using only the contextual evidence provided below, infer maladaptation risks for each objective–action pair.
+# If no evidence supports a maladaptation, write: "(No evidence-based maladaptation found)"
+                 
+---
+Objective: {objective}
+                    
+Actions: {action}
+
+Contextual Evidence: {context_text}
+---
+                 
+# Instructions:
+## 1. Write ONE concise paragraph describing an evidence-supported maladaptation.
+## 2. End with an inline citation: (Evidence: Author, Year).
+## 3. If no evidence supports a maladaptation risk, output only: "(No evidence-based maladaptation found)"
+## 4. Respond in English.
+                        
+Output format:
+# Inferred risk for: {objective} – {action}
+[Paragraph OR (No evidence-based maladaptation found)]
+```
+</details> 

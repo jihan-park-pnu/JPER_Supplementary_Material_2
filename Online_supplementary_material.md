@@ -1,8 +1,11 @@
 # Supplementary material 1
 - Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
-  - Q1-ranked SSCI journals since 2010
+  - Maladaptation-related studies; published Q1-ranked SSCI journals since 2010
   - `Aakre and Rübbelke (2013)`; `Barrett (2014)`; `Bazbauers (2024)`; `Chi et al. (2020)`; `Coggins et al. (2021)`; `Garrison and Martinez (2024)`; `Holland (2017)`; `Hughes (2013)`; `Juhola et al. (2016)`; `See and Wilmsen (2022)`
 - The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
+  - January 1, 2010, and December 31, 2024
+  - Peer-reviewed articles and review papers written in English
+  - Journals indexed in SSCI, SCIE, or AHCI
 - The initial search string was:
 
 ```text

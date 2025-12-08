@@ -31,10 +31,10 @@ AND ("climate justice" OR "justice principle" OR "justice principles" OR "equity
 AND ("climate justice" OR "environmental justice" OR "justice principle" OR "justice principles" OR "equity" OR "procedural justice" OR "participatory justice" OR "recognitional justice" OR "distributive justice" OR "distributional justice" OR "maladaptation" OR "maladaptive outcome" OR "maladaptive outcomes" OR "unintended consequence" OR "unintended consequences" OR "adaptation finance" OR "adaptation funding" OR "resource allocation" OR "fund allocation" OR "climate finance" OR "climate funding").
 ```
 
+- Please refer to the table below for the list of the 782 documents finally collected.
+
 <details>
 <summary><strong>Click to view full table (782 rows)</strong></summary>
-
-- Please refer to the table below for the list of the 782 documents finally collected.
 
 |   No. | Author(s)                                                                                                                                                                                                                                                                                                                                                                                                                      | Artucke Title                                                                                                                                                                                                         | Journal                                                                                    | DOI                                                 |
 |------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|:---------------------------------------------------------|
@@ -830,7 +830,7 @@ AND ("climate justice" OR "environmental justice" OR "justice principle" OR "jus
 
 ## A. Technical setup and configuration 
 
-- This section describes the system requirements, environment setup, directory structure, and model parameters required to reproduce the LLM–RAG pipeline used in this study.
+- This section describes the system requirements, environment setup, directory structure, and model parameters required to reproduce the RAG pipeline used in this study.
 
 ### A.1. Required python libraries
 

@@ -272,6 +272,9 @@ end_kw   = "계획의집행및관리"
 - The table below lists the ten documents randomly selected in each of the three independent runs conducted for the text extraction accuracy assessment described in Section 2.5.
 - 1st trial:
 
+<details>
+<summary><strong>Click to view full table</strong></summary>
+
 | No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Akamani, K | The Roles of Adaptive Water Governance in Enhancing the Transition towards Ecosystem-Based Adaptation | WATER | http://dx.doi.org/10.3390/w15132341 |
@@ -285,7 +288,12 @@ end_kw   = "계획의집행및관리"
 | 9 | Silao, ZH; Ocloo, XS; Chapman, M; Hunt, L; Stenger, K | Trends in agroforestry research over 4 decades | ELEMENTA-SCIENCE OF THE ANTHROPOCENE | http://dx.doi.org/10.1525/elementa.2022.00151 |
 | 10 | Ziaja, S | How Algorithm-Assisted Decision Making Is Influencing Environmental Law and Climate Adaptation | ECOLOGY LAW QUARTERLY | http://dx.doi.org/10.15779/Z38086363B |
 
+</details>
+
 - 2nd trial:
+
+<details>
+<summary><strong>Click to view full table</strong></summary>
 
 | No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
@@ -299,6 +307,8 @@ end_kw   = "계획의집행및관리"
 | 8 | Schultz, KH | Financing climate adaptation with a credit mechanism: initial considerations | CLIMATE POLICY | http://dx.doi.org/10.1080/14693062.2011.605563 |
 | 9 | Singh, GG; Keefer, J; Ota, Y | An inequity assessment framework for planning coastal and marine conservation and development interventions | FRONTIERS IN MARINE SCIENCE | http://dx.doi.org/10.3389/fmars.2023.1256500 |
 | 10 | Smart, LS; Taillie, PJ; Poulter, B; Vukomanovic, J; Singh, KK; Swenson, JJ; Mitasova, H; Smith, JW; Meentemeyer, RK | Aboveground carbon loss associated with the spread of ghost forests as sea levels rise | ENVIRONMENTAL RESEARCH LETTERS | http://dx.doi.org/10.1088/1748-9326/aba136 |
+
+</details>
 
 - 3rd trial:
 

@@ -1,3 +1,19 @@
+# Supplementary material 1
+- The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
+- The initial search string was:
+
+```text
+("climate change adaptation")
+AND ("climate justice" OR "justice principle" OR "justice principles" OR "equity" OR "procedural justice" OR "recognitional justice" OR "distributive justice" OR "maladaptation" OR "unintended consequence*" OR "unintended consequences" OR "adaptation finance" OR "resource allocation" OR "climate finance").
+```
+
+- The initial search string was:
+
+```text
+("climate change adaptation" OR "climate crisis adaptation" OR "climate adaptation")
+AND ("climate justice" OR "environmental justice" OR "justice principle" OR "justice principles" OR "equity" OR "procedural justice" OR "participatory justice" OR "recognitional justice" OR "distributive justice" OR "distributional justice" OR "maladaptation" OR "maladaptive outcome" OR "maladaptive outcomes" OR "unintended consequence" OR "unintended consequences" OR "adaptation finance" OR "adaptation funding" OR "resource allocation" OR "fund allocation" OR "climate finance" OR "climate funding").
+```
+
 <details>
 <summary><strong>Click to view full table (782 rows)</strong></summary>
 

@@ -312,6 +312,9 @@ end_kw   = "계획의집행및관리"
 
 - 3rd trial:
 
+<details>
+<summary><strong>Click to view full table</strong></summary>
+
 | No. | Author(s) | Article Title | Journal | DOI |
 |-----|---------|----------------|---------------|-----------|
 | 1 | Bossio, CF; Labbé, D; Ford, J | Urban dwellers' adaptive capacity as a socio-psychological process: Insights from Lima, Peru | CLIMATE RISK MANAGEMENT | http://dx.doi.org/10.1016/j.crm.2021.100352 |
@@ -324,3 +327,5 @@ end_kw   = "계획의집행및관리"
 | 8 | Lund, AJ; Lopez-Carr, D; Sokolow, SH; Rohr, JR; De Leo, GA | Agricultural Innovations to Reduce the Health Impacts of Dams | SUSTAINABILITY | http://dx.doi.org/10.3390/su13041869 |
 | 9 | Mutua, JY; Marshall, K; Paul, BK; Notenbaert, AMO | A methodology for mapping current and future heat stress risk in pigs | ANIMAL | http://dx.doi.org/10.1017/S1751731120000865 |
 | 10 | Rigolon, A; Tabassum, N; Ewing, R | Climate adaptation strategies for active transportation: Barriers and facilitators in US cities | SUSTAINABLE CITIES AND SOCIETY | http://dx.doi.org/10.1016/j.scs.2024.105956 |
+
+</details>

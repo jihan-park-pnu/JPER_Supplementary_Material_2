@@ -1,6 +1,6 @@
 # Supplementary material 1
 - Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
-  - Maladaptation-related studies; published Q1-ranked SSCI journals since 2010
+  - Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010
   - `Aakre, S., & Rübbelke, D. T. (2010). Adaptation to climate change in the European Union: Efficiency versus equity considerations. Environmental Policy and Governance, 20(3), 159–179.`
   - `Barrett (2014)`
   - `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
@@ -10,7 +10,7 @@
   - `Holland, B. (2017). Procedural justice in local climate adaptation: Political capabilities and transformational change. Environmental Politics, 26(3), 391–412.`
   - `Hughes, S. (2013). Justice in urban climate change adaptation: Criteria and application to Delhi. Ecology and society, 18(4).`
   - `Juhola, S., Glaas, E., Linnér, B. O., & Neset, T. S. (2016). Redefining maladaptation. Environmental Science and Policy, 55, 135–140.`
-  - `See and Wilmsen (2022)`
+  - `See, J., & Wilmsen, B. (2022). A multidimensional framework for assessing adaptative justice: A case study of a small island community in the Philippines. Climatic Change, 170(1).`
 - The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
   - From JAN 1, 2010 to DEC 31, 2024, including articles that were made available online ahead of print
   - Peer-reviewed articles and review papers written in English

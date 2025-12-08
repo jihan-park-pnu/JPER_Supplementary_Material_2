@@ -1,8 +1,8 @@
 # Supplementary material 1
 - Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
   - Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010
-  - `Aakre, S., & Rübbelke, D. T. (2010). Adaptation to climate change in the European Union: Efficiency versus equity considerations. Environmental Policy and Governance, 20(3), 159–179.`
-  - `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
+  1. `Aakre, S., & Rübbelke, D. T. (2010). Adaptation to climate change in the European Union: Efficiency versus equity considerations. Environmental Policy and Governance, 20(3), 159–179.`
+  2. `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
   - `Chi, C. F., Lu, S. Y., & Lee, J. D. (2020). Ostensibly effective adaptive measures could potentially be maladaptations: A case study of the Jiadung coastal area, Pingtung County, Taiwan. Coastal Management, 48(6), 643–676.`
   - `Coggins, S., Berrang-Ford, L., Hyams, K., Satyal, P., Ford, J., Paavola, J., ... & Harper, S. (2021). Empirical assessment of equity and justice in climate adaptation literature: A systematic map. Environmental Research Letters, 16(7), 073003.`
   - `Garrison, J. D., & Martinez, S. (2024). When mitigation is not “just mitigation”: Defining (and diffusing) tensions between climate mitigation, adaptation, and justice. Landscape and Urban Planning, 248, 105081.`

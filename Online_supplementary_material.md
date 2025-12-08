@@ -12,10 +12,11 @@
   9. `Reckien, D., Magnan, A. K., Singh, C., Lukas-Sithole, M., Orlove, B., Schipper, E. L. F., & Coughlan de Perez, E. (2023). Navigating the continuum between adaptation and maladaptation. Nature Climate Change, 13(9), 907–918.`
   10. `See, J., & Wilmsen, B. (2022). A multidimensional framework for assessing adaptative justice: A case study of a small island community in the Philippines. Climatic Change, 170(1).`
 
-- The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
+- The search was restricted to the following publications:  
   - From JAN 1, 2010 to DEC 31, 2024, including 'in press' articles
   - Peer-reviewed articles and review papers written in English
   - Journals indexed in SSCI, SCIE, or AHCI
+- The following search expression was used to retrieve relevant literature from the Web of Science Core Collection. 
 - The initial search string was:
 
 ```text
@@ -32,6 +33,8 @@ AND ("climate justice" OR "environmental justice" OR "justice principle" OR "jus
 
 <details>
 <summary><strong>Click to view full table (782 rows)</strong></summary>
+
+- Please refer to the table below for the list of the 782 documents finally collected.
 
 |   No. | Author(s)                                                                                                                                                                                                                                                                                                                                                                                                                      | Artucke Title                                                                                                                                                                                                         | Journal                                                                                    | DOI                                                 |
 |------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|:---------------------------------------------------------|

@@ -1,3 +1,8 @@
+# Contents
+- Supplementary material 1; Maintext Section 2.2.1 
+- Supplementary material 2; Maintext Section 2.3 and Section 3 
+- Supplementary material 3; Maintext Section 2.5 
+
 # Supplementary material 1
 - Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
   - Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010

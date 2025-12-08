@@ -5,10 +5,12 @@
   - `Barrett (2014)`
   - `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
   - `Chi, C. F., Lu, S. Y., & Lee, J. D. (2020). Ostensibly effective adaptive measures could potentially be maladaptations: A case study of the Jiadung coastal area, Pingtung County, Taiwan. Coastal Management, 48(6), 643–676.`
-  - `Coggins et al. (2021)`
-  - `Garrison and Martinez (2024)`
-  - `Holland (2017)`
-  - `Hughes (2013)`; `Juhola et al. (2016)`; `See and Wilmsen (2022)`
+  - `Coggins, S., Berrang-Ford, L., Hyams, K., Satyal, P., Ford, J., Paavola, J., ... & Harper, S. (2021). Empirical assessment of equity and justice in climate adaptation literature: A systematic map. Environmental Research Letters, 16(7), 073003.`
+  - `Garrison, J. D., & Martinez, S. (2024). When mitigation is not “just mitigation”: Defining (and diffusing) tensions between climate mitigation, adaptation, and justice. Landscape and Urban Planning, 248, 105081.`
+  - `Holland, B. (2017). Procedural justice in local climate adaptation: Political capabilities and transformational change. Environmental Politics, 26(3), 391–412.`
+  - `Hughes, S. (2013). Justice in urban climate change adaptation: Criteria and application to Delhi. Ecology and society, 18(4).`
+  - `Juhola, S., Glaas, E., Linnér, B. O., & Neset, T. S. (2016). Redefining maladaptation. Environmental Science and Policy, 55, 135–140.`
+  - `See and Wilmsen (2022)`
 - The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
   - From JAN 1, 2010 to DEC 31, 2024, including articles that were made available online ahead of print
   - Peer-reviewed articles and review papers written in English

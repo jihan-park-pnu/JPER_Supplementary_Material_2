@@ -1,4 +1,7 @@
 # Supplementary material 1
+- Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
+  - `Aakre and Rübbelke (2013)`; `Barrett (2014)`; `Bazbauers (2024)`; `Chi et al. (2020)`; `Coggins et al. (2021)`
+  - `Garrison and Martinez (2024)`; `Holland (2017)`; `Hughes (2013)`; `Juhola et al. (2016)`; `See and Wilmsen (2022)`
 - The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
 - The initial search string was:
 
@@ -7,7 +10,7 @@
 AND ("climate justice" OR "justice principle" OR "justice principles" OR "equity" OR "procedural justice" OR "recognitional justice" OR "distributive justice" OR "maladaptation" OR "unintended consequence*" OR "unintended consequences" OR "adaptation finance" OR "resource allocation" OR "climate finance").
 ```
 
-- The initial search string was:
+- Synonyms and related terms were then added to expand the query: 
 
 ```text
 ("climate change adaptation" OR "climate crisis adaptation" OR "climate adaptation")

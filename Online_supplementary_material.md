@@ -3,14 +3,14 @@
   - Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010
   1. `Aakre, S., & Rübbelke, D. T. (2010). Adaptation to climate change in the European Union: Efficiency versus equity considerations. Environmental Policy and Governance, 20(3), 159–179.`
   2. `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
-  - `Chi, C. F., Lu, S. Y., & Lee, J. D. (2020). Ostensibly effective adaptive measures could potentially be maladaptations: A case study of the Jiadung coastal area, Pingtung County, Taiwan. Coastal Management, 48(6), 643–676.`
-  - `Coggins, S., Berrang-Ford, L., Hyams, K., Satyal, P., Ford, J., Paavola, J., ... & Harper, S. (2021). Empirical assessment of equity and justice in climate adaptation literature: A systematic map. Environmental Research Letters, 16(7), 073003.`
-  - `Garrison, J. D., & Martinez, S. (2024). When mitigation is not “just mitigation”: Defining (and diffusing) tensions between climate mitigation, adaptation, and justice. Landscape and Urban Planning, 248, 105081.`
-  - `Holland, B. (2017). Procedural justice in local climate adaptation: Political capabilities and transformational change. Environmental Politics, 26(3), 391–412.`
-  - `Hughes, S. (2013). Justice in urban climate change adaptation: Criteria and application to Delhi. Ecology and society, 18(4).`
-  - `Juhola, S., Glaas, E., Linnér, B. O., & Neset, T. S. (2016). Redefining maladaptation. Environmental Science and Policy, 55, 135–140.`
-  - `Reckien, D., Magnan, A. K., Singh, C., Lukas-Sithole, M., Orlove, B., Schipper, E. L. F., & Coughlan de Perez, E. (2023). Navigating the continuum between adaptation and maladaptation. Nature Climate Change, 13(9), 907–918.`
-  - `See, J., & Wilmsen, B. (2022). A multidimensional framework for assessing adaptative justice: A case study of a small island community in the Philippines. Climatic Change, 170(1).`
+  3. `Chi, C. F., Lu, S. Y., & Lee, J. D. (2020). Ostensibly effective adaptive measures could potentially be maladaptations: A case study of the Jiadung coastal area, Pingtung County, Taiwan. Coastal Management, 48(6), 643–676.`
+  4. `Coggins, S., Berrang-Ford, L., Hyams, K., Satyal, P., Ford, J., Paavola, J., ... & Harper, S. (2021). Empirical assessment of equity and justice in climate adaptation literature: A systematic map. Environmental Research Letters, 16(7), 073003.`
+  5. `Garrison, J. D., & Martinez, S. (2024). When mitigation is not “just mitigation”: Defining (and diffusing) tensions between climate mitigation, adaptation, and justice. Landscape and Urban Planning, 248, 105081.`
+  6. `Holland, B. (2017). Procedural justice in local climate adaptation: Political capabilities and transformational change. Environmental Politics, 26(3), 391–412.`
+  7. `Hughes, S. (2013). Justice in urban climate change adaptation: Criteria and application to Delhi. Ecology and society, 18(4).`
+  8. `Juhola, S., Glaas, E., Linnér, B. O., & Neset, T. S. (2016). Redefining maladaptation. Environmental Science and Policy, 55, 135–140.`
+  9. `Reckien, D., Magnan, A. K., Singh, C., Lukas-Sithole, M., Orlove, B., Schipper, E. L. F., & Coughlan de Perez, E. (2023). Navigating the continuum between adaptation and maladaptation. Nature Climate Change, 13(9), 907–918.`
+  10. `See, J., & Wilmsen, B. (2022). A multidimensional framework for assessing adaptative justice: A case study of a small island community in the Philippines. Climatic Change, 170(1).`
 
 - The following expression was used to retrieve literature related to maladaptation from the Web of Science Core Collection.
   - From JAN 1, 2010 to DEC 31, 2024, including 'in press' articles

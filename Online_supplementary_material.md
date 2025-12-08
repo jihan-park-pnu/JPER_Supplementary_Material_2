@@ -5,7 +5,7 @@
 
 # Supplementary material 1
 - Using a seed corpus of ten articles, we extracted the major keywords and defined them as the initial search string.
-  - Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010
+- Maladaptation and climate justice studies published in Q1-ranked SSCI journals since 2010: 
   1. `Aakre, S., & Rübbelke, D. T. (2010). Adaptation to climate change in the European Union: Efficiency versus equity considerations. Environmental Policy and Governance, 20(3), 159–179.`
   2. `Bazbauers, A. R. (2025). The Multilateral Development Banks and Rural Climate Finance: Adaptation, Mitigation, and Resilience. The Journal of Environment and Development, 34(2), 437–466.`
   3. `Chi, C. F., Lu, S. Y., & Lee, J. D. (2020). Ostensibly effective adaptive measures could potentially be maladaptations: A case study of the Jiadung coastal area, Pingtung County, Taiwan. Coastal Management, 48(6), 643–676.`
